@@ -1,0 +1,27 @@
+<swiper  current="{{currentTab}}"  circular="true" bindchange="switchTab" >
+	<swiper-item wx:for="{{Lists}}">
+		<view>
+			<view> {{index + 1}} {{item.timu}}</view>
+			<!-- {{item.length}}放入类型进行判断 -->
+			<!-- 实现了答错了还是答对了 进行显示相应的颜色 -->
+			<view data-aa="{{currentselected==item.answer?'active':''}}">
+				<!-- 错了的话 显示正确的颜色    怎么弄 -->
+
+			</view>
+			<view bindtap="selected" data-answer="{{item.answer}}" data-currentid="{{item.id}}">
+				<view data-myanswer="1" > A:{{item.xuan1}}</view>
+				<view data-myanswer="2" > B:{{item.xuan2}}</view>
+				<view data-myanswer="3" > C:{{item.xuan3}}</view>
+				<view data-myanswer="4" > D:{{item.xuan4}}</view>
+        <view >
+        {{selectedLists[index].answer}}
+        </view>
+        <!-- class="tab-it {{selectedLists[{{item.id}}].myanswer==4?'active':'inactive'}}" -->
+			</view>
+		</view>
+	</swiper-item>
+</swiper>
+<view wx:for="{{Lists.length}}">
+	<view bindtap="changeIndex" data-tiaotarget="{{index}}">{{index + 1}}
+	</view>
+</view>

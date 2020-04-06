@@ -1,0 +1,55 @@
+<swiper current="{{currentTab}}" bindchange="switchTab">
+	<swiper-item wx:for="{{question}}">
+		<view>
+			{{item.id}}
+			{{item.title}}
+
+			<!---wx:key="{{index}}"  啥意思-->
+			<view wx:for="{{item.options}}" data-answer="{{item.answer}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{idx}}"  data-index="{{idx}}" data-value="{{itemName.value}}" data-checked="{{itemName.checked}}">
+				<!-- <view class="  {{item.value!=ansArr[currentTab]&& item.checked == true ?'bg-red':''}} red">                        itemName[currentTab] -->
+				<view class="{{itemName.value==item.answer ?'green':''}}">
+					{{itemName.value}}{{itemName.name}}
+				</view>
+			</view>
+						<!-- {{item.answer}} -->
+			<!-- <view> {{index + 1}} {{item.options.value}}</view>
+			{{item.length}}放入类型进行判断
+			实现了答错了还是答对了 进行显示相应的颜色
+			<view data-aa="{{currentselected==item.answer?'active':''}}">
+				错了的话 显示正确的颜色    怎么弄
+
+			</view>
+			<view bindtap="selected" data-answer="{{item.answer}}" data-currentid="{{item.id}}">
+				<view data-myanswer="1" > A:{{item.xuan1}}</view>
+				<view data-myanswer="2" > B:{{item.xuan2}}</view>
+				<view data-myanswer="3" > C:{{item.xuan3}}</view>
+				<view data-myanswer="4" > D:{{item.xuan4}}</view>
+			</view> -->
+		</view>
+	</swiper-item>
+</swiper>
+
+<!-- 显示弹窗 -->
+<text class='up' bindtap='showRule'>点击弹出</text>
+<view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+	<!-- 弹窗内容 -->
+	<view class='floatContent'>
+		<view wx:for="{{question}}" bindtap="changeIndex">
+			<view class="{{item.rightandwrong == 1  ?'green':''}} {{item.rightandwrong == -1  ?'red':''}}  {{index == currentTab  ?'yellow':''}}" data-tiaotarget="{{index}}">{{index + 1}}</view>
+		</view>
+		<!-- 关闭弹窗 -->
+		<view class='ruleHide' bindtap='hideRule'>X</view>
+	</view>
+</view>
+<view>{{currentTab+1}}/{{question.length}}</view>
+<!-- 
+<view wx:for="{{question.length}}" bindtap="changeIndex">
+
+	{{choose[currentTab]}}
+{{currentTab}}
+{{choose[0]}} choose[currentTab] == true
+	<view class="{{currentTab == index  ?'yellow':''}}  " data-tiaotarget="{{index}}">{{index + 1}}
+
+	<view class="{{choose[currentTab] == true  ?'yellow':''}}  " data-tiaotarget="{{index}}">{{index + 1}}
+	</view>
+</view> -->

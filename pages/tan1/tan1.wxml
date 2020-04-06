@@ -1,0 +1,7 @@
+<text class='up' bindtap='showRule'>点击弹出</text>
+<view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+  <view class='floatContent'>
+    我是内容啊
+    <view class='ruleHide' bindtap='hideRule'>X</view>
+  </view>
+</view>

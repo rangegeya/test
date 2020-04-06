@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/duo1/duo1",
+    "pages/swper2/swper2",
+    "pages/kan1/kan1",
+    "pages/swper1/swper1",
+    "pages/tan1/tan1",
+    "pages/swper/swper",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
